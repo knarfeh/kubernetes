@@ -6,6 +6,9 @@ variables:
 stages:
   - build
 
+before_script:
+  - apt install rsync -y
+
 build_all:
   stage: build
   script:
