@@ -1,0 +1,19 @@
+image: docker-registry.i.brainpp.cn/brain/ci-base:18.04_v0.0.0-20190916100553-883f5dbc8262
+
+variables:
+  DOCKER_IMAGE: _admin/ci-base
+
+stages:
+  - build
+
+build_all:
+  stage: build
+  script:
+    - make
+  variables:
+    EXPECTED_CPU: 10
+    EXPECTED_MEMORY: 13000
+  retry: 1
+  tags:
+    - docker
+
