@@ -7,8 +7,9 @@ stages:
   - build
 
 before_script:
+  - apt-get update
   - apt-get install rsync -y
-  - apt-get install --reinstall tzdata
+  - apt-get install --reinstall tzdata -y
 
 build_all:
   stage: build
