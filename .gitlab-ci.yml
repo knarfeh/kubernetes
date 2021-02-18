@@ -7,13 +7,14 @@ stages:
   - build
 
 before_script:
-  - apt install rsync -y
+  - apt-get install rsync -y
+  - apt-get install --reinstall tzdata
 
 build_all:
   stage: build
   script:
     - ls /usr/share/zoneinfo
-    - sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+    - sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
     - ./build/run.sh make kubelet KUBE_BUILD_PLATFORMS=linux/amd64 BUILDTAGS="nokmem"
   variables:
     EXPECTED_CPU: 10
