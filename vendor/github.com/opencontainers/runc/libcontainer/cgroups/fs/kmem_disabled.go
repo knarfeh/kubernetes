@@ -11,5 +11,5 @@ func EnableKernelMemoryAccounting(path string) error {
 }
 
 func setKernelMemory(path string, kernelMemoryLimit int64) error {
-	return errors.New("kernel memory accounting disabled in this runc build")
+	return nil
 }
