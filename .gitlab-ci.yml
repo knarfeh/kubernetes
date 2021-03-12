@@ -15,7 +15,8 @@ build_all:
   stage: build
   script:
     - sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-    - KUBE_GIT_VERSION=v1.16.2-patch make kubelet GOFLAGS="-tags=nokmem" KUBE_BUILD_PLATFORMS=linux/amd64
+    # - KUBE_GIT_VERSION=v1.16.2-patch make kubelet GOFLAGS="-tags=nokmem" KUBE_BUILD_PLATFORMS=linux/amd64
+    - make BUILDTAGS="nokmem" WHAT=cmd/kubelet GOFLAGS=-v GOGCFLAGS="-N -l"
   variables:
     EXPECTED_CPU: 10
     EXPECTED_MEMORY: 13000
