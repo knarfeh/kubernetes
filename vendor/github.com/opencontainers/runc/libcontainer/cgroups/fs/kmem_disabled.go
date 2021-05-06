@@ -2,9 +2,7 @@
 
 package fs
 
-import (
-	"errors"
-)
+import ()
 
 func EnableKernelMemoryAccounting(path string) error {
 	return nil

@@ -2,11 +2,7 @@
 
 package fs
 
-import (
-	"errors"
-)
-
-const cgroupKernelMemoryLimit = "memory.kmem.limit_in_bytes"
+import ()
 
 func EnableKernelMemoryAccounting(path string) error {
 	// Ensure that kernel memory is available in this kernel build. If it
